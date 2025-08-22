@@ -15,6 +15,7 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build Docker Image
         run: docker build -t sonsungjong/reactjs-app .
+        # run: docker build --build-arg VITE_NAVER_MAP_API=${{ secrets.VITE_NAVER_MAP_API }} --build-arg VITE_KAKAO_MAP_API=${{ secrets.VITE_KAKAO_MAP_API }} -t sonsungjong/reactjs-app .
       - name: Publish image to docker Hub
         run: docker push sonsungjong/reactjs-app:latest
 

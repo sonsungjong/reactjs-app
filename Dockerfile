@@ -1,7 +1,13 @@
 # 리액트 빌드
-# FROM node:alpine3.18 as build
 FROM node:20-alpine3.21 AS build
 WORKDIR /app
+
+# ARG VITE_NAVER_MAP_API
+# ENV VITE_NAVER_MAP_API=${VITE_NAVER_MAP_API}
+
+# ARG VITE_KAKAO_MAP_API
+# ENV VITE_KAKAO_MAP_API=${VITE_KAKAO_MAP_API}
+
 COPY package.json .
 RUN npm install
 COPY . .
